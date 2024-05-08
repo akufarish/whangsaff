@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/chatLayout"
+    android:clickable="true"
+    android:background="@drawable/custom_chat_background"
+    android:layout_height="80dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/callsImageView"
+            app:shapeAppearanceOverlay="@style/rounded_image"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:src="@drawable/pp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginBottom="32dp"
+            android:layout_width="250dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/callsImageView"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:id="@+id/callNameTextView"
+            android:text="aaaaaaa"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_marginStart="12dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/callsImageView"
+            app:layout_constraintTop_toBottomOf="@+id/callNameTextView"
+            android:textColor="@color/gray_400"
+            android:textSize="18sp"
+            android:id="@+id/callTimeTextView"
+            android:text="aaaaaaa"/>
+
+        <ImageButton
+            android:background="@drawable/transparent_button"
+            android:src="@drawable/ic_phone"
+            android:scaleType="fitCenter"
+            android:padding="12dp"
+            android:layout_width="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/chatIcon"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

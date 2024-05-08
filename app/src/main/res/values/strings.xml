@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Whangsaff</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="updates">Updates</string>
+    <string name="status">Status</string>
+    <string name="calls">Calls</string>
+    <string name="recent">Recent</string>
+</resources>
