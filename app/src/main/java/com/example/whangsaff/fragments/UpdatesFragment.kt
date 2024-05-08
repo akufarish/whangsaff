@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.whangsaff.R
 import com.example.whangsaff.adapters.UpdateAdapter
@@ -60,6 +61,10 @@ class UpdatesFragment : Fragment() {
         updatesArrayList = arrayListOf<Updates>()
         getStatusData()
         statusRecyclerView?.adapter = UpdateAdapter(updatesArrayList)
+        statusRecyclerView?.layoutManager = LinearLayoutManager(
+            requireContext(),
+            LinearLayoutManager.VERTICAL,
+            false)
     }
 
     private fun getStatusData() {
@@ -72,14 +77,20 @@ class UpdatesFragment : Fragment() {
     private fun dataInit() {
         updateImage = arrayListOf(
             R.drawable.pp,
+            R.drawable.pp,
+            R.drawable.pp,
         )
 
         updateName = arrayListOf(
-            "Farish"
+            "Farisha",
+            "Lana",
+            "Jana"
         )
 
         updateTime = arrayListOf(
-            LocalDate.now().toString()
+            LocalDate.now().toString(),
+            LocalDate.now().toString(),
+            LocalDate.now().toString(),
         )
     }
 }
