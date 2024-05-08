@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.viewpager2.widget.ViewPager2
+import com.example.whangsaff.adapters.PageAdapter
 import com.example.whangsaff.fragments.CallsFragment
 import com.example.whangsaff.fragments.ChatFragment
 import com.example.whangsaff.fragments.UpdatesFragment
@@ -12,9 +14,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var pageAdapter: PageAdapter
+    private lateinit var viewPager2: ViewPager2
 
     private fun initComponent() {
         bottomNavigationView = findViewById(R.id.bottomNavBar)
+        viewPager2 = findViewById(R.id.mainViewPager)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,16 +33,19 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemReselectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.chatsId -> {
-                    replaceFragment(ChatFragment())
+                    viewPager2.setCurrentItem(0)
                 }
                 R.id.updatesId -> {
-                    replaceFragment(UpdatesFragment())
+                    viewPager2.setCurrentItem(1)
                 }
                 R.id.callsId -> {
-                    replaceFragment(CallsFragment())
+                    viewPager2.setCurrentItem(2)
                 }
             }
         }
+
+        pageAdapter = PageAdapter(supportFragmentManager, lifecycle)
+        viewPager2.adapter = pageAdapter
     }
 
     private fun replaceFragment(fragment: Fragment) {

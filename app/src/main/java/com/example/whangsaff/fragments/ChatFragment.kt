@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.whangsaff.R
 import com.example.whangsaff.adapters.ChatAdapter
 import com.example.whangsaff.models.Chat
@@ -41,6 +42,8 @@ class ChatFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var viewPager: ViewPager2? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +56,7 @@ class ChatFragment : Fragment() {
     private fun initComponent() {
         chatRecyclerView = view?.findViewById(R.id.chatRecyclerView)
         chatItem = view?.findViewById(R.id.chatLayout)
+        viewPager = view?.findViewById(R.id.mainViewPager)
     }
 
     override fun onCreateView(
